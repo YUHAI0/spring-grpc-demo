@@ -1,0 +1,39 @@
+plugins {
+    id 'org.springframework.boot' //version '2.6.2'
+    id 'io.spring.dependency-management' //version '1.0.11.RELEASE'
+    id 'java'
+    id 'idea'
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':spring-grpc-lib')
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation 'io.grpc:grpc-netty-shaded:1.43.2'
+    implementation 'io.grpc:grpc-protobuf:1.43.2'
+    implementation 'io.grpc:grpc-stub:1.43.2'
+
+//    implementation 'net.devh:grpc-server-spring-boot-starter:2.4.0.RELEASE'
+    implementation 'net.devh:grpc-server-spring-boot-starter:2.13.1.RELEASE'
+
+//    compile group: 'net.devh', name: 'grpc-client-spring-boot-starter', version: '2.0.1.RELEASE'
+//    compile group: 'net.devh', name: 'grpc-server-spring-boot-starter', version: '2.0.1.RELEASE'
+}
+
+test {
+    useJUnitPlatform()
+}

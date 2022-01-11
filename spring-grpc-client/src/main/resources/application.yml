@@ -1,0 +1,16 @@
+server:
+  port: 9091
+spring:
+  application:
+    name: local-grpc-client
+grpc:
+  client:
+    local-grpc-server:
+      negotiationType: PLAINTEXT
+      address: static://0.0.0.0:8002
+#      host:
+#        - ${LOCAL-GRPC-HOST:127.0.0.1}
+#      port:
+#        - 8002
+#      enableKeepAlive: true
+#      keepAliveWithoutCalls: true

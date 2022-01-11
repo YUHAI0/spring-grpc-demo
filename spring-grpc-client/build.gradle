@@ -1,0 +1,23 @@
+plugins {
+    id 'org.springframework.boot' //version '2.6.2'
+    id 'io.spring.dependency-management' //version '1.0.11.RELEASE'
+    id 'java'
+}
+
+dependencies {
+    compile project(':spring-grpc-lib')
+
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.projectlombok:lombok:1.18.22'
+    implementation 'com.alibaba:fastjson:1.2.79'
+
+//    implementation 'net.devh:grpc-client-spring-boot-starter:2.4.0.RELEASE'
+    implementation 'net.devh:grpc-client-spring-boot-starter:2.13.1.RELEASE'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+}
